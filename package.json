@@ -1,0 +1,67 @@
+{
+  "name": "electron-typescript-react-template",
+  "version": "1.0.0",
+  "private": true,
+  "description": "React-TypeScript-Electron sample with Create React App and ElectronBuilder",
+  "main": "build/electron/main.js",
+  "author": "ExampleWasTaken Studios",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ExampleWasTaken-Studios/electron-typescript-react-template.git"
+  },
+  "license": "MIT",
+  "homepage": ".",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/electron-devtools-installer": "^2.2.2",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.56",
+    "@types/react": "^18.0.18",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
+    "electron-devtools-installer": "^3.2.0",
+    "electron-reload": "^2.0.0-alpha.1",
+    "eslint": "^8.23.0",
+    "eslint-plugin-react": "^7.31.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.8.2",
+    "typescript-eslint": "^0.0.1-alpha.0",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "concurrently": "^7.3.0",
+    "cross-env": "^7.0.3",
+    "electron": "^20.1.1",
+    "electron-builder": "^23.3.3",
+    "wait-on": "^6.0.1"
+  },
+  "scripts": {
+    "start": "concurrently \"cross-env BROWSER=none npm run react:start\" \"wait-on http://localhost:3000 && tsc -p electron -w\" \"wait-on http://localhost:3000 && tsc -p electron && electron .\"",
+    "build": "npm run react:build && tsc -p electron && electron-builder -c stable.electron-builder.json",
+    "build:canary": "npm run react:build && tsc -p electron && electron-builder -c canary.electron-builder.json",
+    "clean:mac": "rm -r dist build",
+    "clean:win": "rmdir dist build /q /s",
+    "react:start": "react-scripts start",
+    "react:build": "react-scripts build",
+    "react:test": "react-scripts test",
+    "react:eject": "react-scripts eject",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
