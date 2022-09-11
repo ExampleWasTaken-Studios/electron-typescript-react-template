@@ -11,9 +11,10 @@ It provides
 ## Project structure
 The project is structured like a typical create-react-app project with the addition of the [electron](./electron/) and [assets folder](./assets/).
 
-- [assets](./assets/) - All assets that are needed by the app. This includes build files as well as images, etc.
+- [assets](./assets/) - All assets that are needed by the app. This includes build files as well as files needed at runtime.
+  > Note, that files required by the renderer process need to be placed in the [rendererAssets](./src/rendererAssets/) folder as specified in the [create-react-app](https://create-react-app.dev/docs/folder-structure) docs.
 - [electron](./electron/) - All electron/main process related source files.
-- [src](./src/) - All renderer process related source files.
+- [src](./src/) - All renderer process related files.
 
 ## Get started
 Because this project is kept as generic as possible there's a few things that need to be configured before usage.

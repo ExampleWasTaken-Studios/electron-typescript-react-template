@@ -1,8 +1,8 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import logo from "./rendererAssets/img/logo.png";
 
-function App() {
+export const App = () => {
+
   return (
     <div className="App">
       <header className="App-header">
@@ -10,21 +10,31 @@ function App() {
           src={logo}
           className="App-logo"
           alt="logo"
+          style={{ borderRadius: 1000 }}
         />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Electron-TypeScript-React template by <br />
+          <a 
+            className="App-link"
+            href="https://github.com/ExampleWasTaken-Studios"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ExampleWasTaken Studios
+          </a>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <p>
+          Please read the README of this project <br/>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
           Learn React
-        </a>
+          </a>
+        </p>
       </header>
     </div>
   );
-}
-
-export default App;
+};

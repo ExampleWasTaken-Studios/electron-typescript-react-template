@@ -32,10 +32,13 @@
   },
   "extends": null,
   "files": [
-    "build/**/*",
-    "assets/img/**/*"
+    "build/**/*"
   ],
   "directories": {
     "buildResources": "assets/build/canary"
+  },
+  "extraResources": {
+    "from": "./assets/runtime",
+    "to": "assets"
   }
 }
